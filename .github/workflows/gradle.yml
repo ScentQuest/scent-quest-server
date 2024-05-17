@@ -35,9 +35,7 @@ jobs:
       run: chmod +x ./gradlew
 
     - name: Build with Gradle Wrapper
-      env:
-        JASYPT_ENCRYPTOR_PASSWORD: ${{ secrets.JASYPT_ENCRYPTOR_PASSWORD }}
-      run: ./gradlew build -Pjasypt.encryptor.password = $JASYPT_ENCRYPTOR_PASSWORD
+      run: ./gradlew build -Pjasypt.encryptor.password = ${{ secrets.JASYPT_ENCRYPTOR_PASSWORD }}
 
   dependency-submission:
 
